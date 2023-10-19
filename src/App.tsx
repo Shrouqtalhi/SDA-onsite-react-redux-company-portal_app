@@ -4,6 +4,8 @@ import { Button, Box, Grid, Typography } from '@mui/material'
 import { decrement, increment } from './features/counterSlice'
 import { RootState } from './store'
 import './App.css'
+import CompanyDetails from './CompanyDetails'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   const count = useSelector((state: RootState) => state.counter.value)
@@ -29,6 +31,9 @@ function App() {
           </Grid>
         </Grid>
       </Box>
+      <Routes>
+        <Route path="/" element={<CompanyDetails />} />
+      </Routes>
     </div>
   )
 }
