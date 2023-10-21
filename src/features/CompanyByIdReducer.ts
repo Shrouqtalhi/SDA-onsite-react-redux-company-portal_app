@@ -2,13 +2,13 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { Company } from '../CompanyType'
 
 type InitialState = {
-  company: null | Company
+  companyById: null | Company
   loading: boolean
   error: null | string
 }
 
 const initialState: InitialState = {
-  company: null,
+  companyById: null,
   loading: true,
   error: null
 }
@@ -19,7 +19,7 @@ const companyByIdSlice = createSlice({
   reducers: {
     getData: (state, action: PayloadAction<Company>) => {
       console.log(action.payload)
-      state.company = action.payload
+      state.companyById = action.payload
       state.loading = false
     },
     handleError: (state, action: PayloadAction<string>) => {
@@ -31,4 +31,4 @@ const companyByIdSlice = createSlice({
 const companyByIdReducer = companyByIdSlice.reducer
 export default companyByIdReducer
 
-export const companyAction = companyByIdSlice.actions
+export const companyByIdAction = companyByIdSlice.actions

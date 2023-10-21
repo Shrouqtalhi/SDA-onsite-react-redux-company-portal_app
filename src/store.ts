@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './features/counterSlice'
 import companyReducer from './features/companyReducer'
+import companyByIdReducer from './features/CompanyByIdReducer'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    company: companyReducer
+    company: companyReducer,
+    companyById: companyByIdReducer
   }
 })
 

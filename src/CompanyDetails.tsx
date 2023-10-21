@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { companyAction } from './features/companyReducer'
 import { RootState } from './store'
+import { Link } from 'react-router-dom'
 
 export default function CompanyDetails() {
   const url = 'https://api.github.com/organizations'
@@ -32,7 +33,10 @@ export default function CompanyDetails() {
       {companysList.map((company) => {
         return (
           <div key={company.login}>
-            <p>{company.login}</p>
+            <h4>{company.login}</h4>
+            <Link to={`/company/${company.id}`}>
+              <button>More</button>
+            </Link>
           </div>
         )
       })}

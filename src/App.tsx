@@ -6,6 +6,7 @@ import { RootState } from './store'
 import './App.css'
 import CompanyDetails from './CompanyDetails'
 import { Route, Routes } from 'react-router-dom'
+import CompanyById from './CompanyById'
 
 function App() {
   const count = useSelector((state: RootState) => state.counter.value)
@@ -15,7 +16,7 @@ function App() {
     <div className="App">
       <h1>Vite + React + Toolkit + MUI</h1>
       <Box sx={{ width: '100%' }}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        {/* <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item xs={5}>
             <Button variant="contained" onClick={() => dispatch(increment())}>
               Increment
@@ -29,10 +30,11 @@ function App() {
               Decrement
             </Button>
           </Grid>
-        </Grid>
+        </Grid> */}
       </Box>
       <Routes>
         <Route path="/" element={<CompanyDetails />} />
+        <Route path="/company/:id" element={<CompanyById />} />
       </Routes>
     </div>
   )
